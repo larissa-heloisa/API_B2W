@@ -36,6 +36,11 @@ public class PlanetService {
 		return repository.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		repository.deleteById(id);
+	}
+	
 	public Planet fromDTO(PlanetDTO objDto) {
 		return new Planet(objDto.getId(), objDto.getName(), objDto.getClimate(), objDto.getTerrain());
 	}
