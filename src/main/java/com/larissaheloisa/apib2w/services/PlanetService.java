@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.larissaheloisa.apib2w.domain.Planet;
+import com.larissaheloisa.apib2w.dto.PlanetDTO;
 import com.larissaheloisa.apib2w.repository.PlanetRepository;
 import com.larissaheloisa.apib2w.services.exception.ObjectNotFoundException;
 
@@ -28,5 +29,13 @@ public class PlanetService {
 			throw new ObjectNotFoundException("Id not found");
 		}
 		
+	}
+	
+	public Planet insert(Planet obj) {
+		return repository.insert(obj);
+	}
+	
+	public Planet fromDTO(PlanetDTO objDto) {
+		return new Planet(objDto.getId(), objDto.getName(), objDto.getClimate(), objDto.getTerrain());
 	}
 }
