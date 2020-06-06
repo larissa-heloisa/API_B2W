@@ -8,6 +8,5 @@ import com.larissaheloisa.apib2w.domain.Planet;
 @Repository
 public interface PlanetRepository extends MongoRepository<Planet, String> {
 
-	
-
+	Planet findByName(String name);
 }

@@ -26,6 +26,7 @@ public class PlanetService {
 		if(planet.isPresent()) {
 			return planet.get();
 		}else {
+			
 			throw new ObjectNotFoundException("Id not found");
 		}
 		
@@ -38,4 +39,9 @@ public class PlanetService {
 	public Planet fromDTO(PlanetDTO objDto) {
 		return new Planet(objDto.getId(), objDto.getName(), objDto.getClimate(), objDto.getTerrain());
 	}
+	
+	public Planet findByName(String name) {
+		return repository.findByName(name);
+	}
+	
 }
