@@ -15,17 +15,20 @@ public class Planet implements Serializable {
 	private String name;
 	private String climate;
 	private String terrain;
+	private Integer appearence;
+	
 	
 	public Planet() {
 		
 	}
 
-	public Planet(String id, String name, String climate, String terrain) {
+	public Planet(String id, String name, String climate, String terrain, Integer appearence) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.climate = climate;
 		this.terrain = terrain;
+		this.appearence = appearence;
 	}
 
 	public String getId() {
@@ -60,4 +63,11 @@ public class Planet implements Serializable {
 		this.terrain = terrain;
 	}
 
+	public Integer getAppearence() {
+		return appearence;
+	}
+
+	public void setAppearence(Integer appearence) {
+		this.appearence = appearence;
+	}
 }

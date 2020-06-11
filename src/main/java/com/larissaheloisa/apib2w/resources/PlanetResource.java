@@ -1,5 +1,6 @@
 package com.larissaheloisa.apib2w.resources;
 
+
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,10 +23,10 @@ import com.larissaheloisa.apib2w.services.PlanetService;
 @RestController
 @RequestMapping(value = "/planets")
 public class PlanetResource {
-
+	
 	@Autowired
 	private PlanetService service;
-	 
+	
 	@GetMapping
 	public ResponseEntity<List<PlanetDTO>> findAll() {
 		List<Planet> list = service.findAll();
@@ -50,6 +51,7 @@ public class PlanetResource {
 	@PostMapping
 	public ResponseEntity<Void> insert(@RequestBody PlanetDTO objDto) {
 		Planet obj = service.fromDTO(objDto);
+		obj.setAppearence(ConsumeAPISW.getAppearence(obj.getName()));
 		obj = service.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -60,6 +62,5 @@ public class PlanetResource {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	
 	
 }

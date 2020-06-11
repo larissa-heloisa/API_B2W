@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.larissaheloisa.apib2w.domain.Planet;
 
+
 public class PlanetDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -12,6 +13,7 @@ public class PlanetDTO implements Serializable{
 	private String name;
 	private String climate;
 	private String terrain;
+	private Integer appearence;
 	
 	public PlanetDTO() {
 		
@@ -22,6 +24,7 @@ public class PlanetDTO implements Serializable{
 		name = obj.getName();
 		climate = obj.getClimate();
 		terrain = obj.getTerrain();
+		appearence = obj.getAppearence();
 	}
 
 	public String getId() {
@@ -55,6 +58,12 @@ public class PlanetDTO implements Serializable{
 	public void setTerrain(String terrain) {
 		this.terrain = terrain;
 	}
-	
-	
+
+	public Integer getAppearence() {
+		return appearence;
+	}
+
+	public void setAppearence(Integer appearence) {
+		this.appearence = appearence;
+	}	
 }

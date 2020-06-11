@@ -42,11 +42,13 @@ public class PlanetService {
 	}
 	
 	public Planet fromDTO(PlanetDTO objDto) {
-		return new Planet(objDto.getId(), objDto.getName(), objDto.getClimate(), objDto.getTerrain());
+		return new Planet(objDto.getId(), objDto.getName(), objDto.getClimate(), objDto.getTerrain(), objDto.getAppearence());
 	}
 	
 	public Planet findByName(String name) {
 		return repository.findByName(name);
 	}
+	
+
 	
 }
