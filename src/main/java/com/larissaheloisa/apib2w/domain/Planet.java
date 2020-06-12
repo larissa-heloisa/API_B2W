@@ -30,6 +30,12 @@ public class Planet implements Serializable {
 		this.terrain = terrain;
 		this.appearence = appearence;
 	}
+	
+	public Planet(String name, String climate, String terrain) {
+		this.name = name;
+		this.climate = climate;
+		this.terrain = terrain;
+	}
 
 	public String getId() {
 		return id;
