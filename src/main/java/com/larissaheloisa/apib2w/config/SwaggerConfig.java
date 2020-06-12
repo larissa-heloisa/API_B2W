@@ -33,7 +33,7 @@ public class SwaggerConfig {
 				.version("1.0")
 				.license("Apache License Version 4.0")
 				.contact(new Contact("Larissa Heloisa", "https://www.linkedin.com/in/larissa-heloisa-lh/", 
-						"larissaheloisa@gmail.com"))
+						"larissaheloisalh@gmail.com"))
 				.build();
 	}
 
